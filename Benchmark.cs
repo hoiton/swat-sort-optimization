@@ -20,28 +20,35 @@ public class MergeSortBenchmark
     }
 
     [Benchmark]
-    public List<int> MergeSortOptimizedSpan()
+    public List<int> List_Sort()
     {
-        return SolutionOptimizedSpan.SortList(_input);
-    }
-
-    [Benchmark]
-    public List<int> MergeSortSpan()
-    {
-        return SolutionSpan.SortList(_input);
+        var copy = new List<int>(_input);
+        copy.Sort();
+        return copy;
     }
 
     [Benchmark(Baseline = true)]
-    public List<int> MergeSort()
+    public List<int> Example()
     {
         return Solution.SortList(_input);
     }
 
     [Benchmark]
-    public List<int> ListSort()
+    public List<int> Optimized_SimpleSpans()
     {
-        var copy = new List<int>(_input);
-        copy.Sort();
-        return copy;
+        return SolutionSpan.SortList(_input);
+    }
+
+    [Benchmark]
+    public List<int> Optimized_SpansOptimized()
+    {
+        return SolutionOptimizedSpan.SortList(_input);
+    }
+
+    [Benchmark]
+    public List<int> Optimized_SpansOptimized_WithInsertionSort()
+    {
+        return SolutionOptimizedSpanWithInsertionSort
+            .SortList(_input);
     }
 }
