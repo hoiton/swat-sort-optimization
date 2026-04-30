@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+BenchmarkDotNet.Artifacts/
+
+*.user
+*.suo
+*.cache
+*.pdb
+
+*.tmp
