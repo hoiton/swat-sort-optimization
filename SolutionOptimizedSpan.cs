@@ -22,6 +22,18 @@ public class SolutionOptimizedSpan
         if (span.Length <= 1)
             return;
 
+        if (span.Length == 2)
+        {
+            if (span[0] > span[1])
+            {
+                var temp = span[0];
+                span[0] = span[1];
+                span[1] = temp;
+            }
+
+            return;
+        }
+
         var mid = span.Length / 2;
 
         var left = span[..mid];

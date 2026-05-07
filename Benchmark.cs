@@ -8,7 +8,7 @@ public class MergeSortBenchmark
 {
     private List<int> _input = [];
 
-    [Params(10, 100, 1_000, 10_000)] public int Size { get; set; }
+    [Params(10, 100, 1_000, 10_000, 100_000)] public int Size { get; set; }
 
     [GlobalSetup]
     public void Setup()
